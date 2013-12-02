@@ -10,27 +10,25 @@
     }
 }(this, function() {
 var _,
-  __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
+  __hasProp = {}.hasOwnProperty,
   __slice = [].slice;
 
 _ = {
   each: function(collection, fn) {
-    var key, value, _i, _len, _results, _results1;
-    if (__indexOf.call(collection, 'length') >= 0) {
-      _results = [];
+    var key, value, _i, _len;
+    if (typeof collection.length !== 'undefined') {
       for (key = _i = 0, _len = collection.length; _i < _len; key = ++_i) {
         value = collection[key];
-        _results.push(fn(value, key));
+        fn(value, key);
       }
-      return _results;
     } else {
-      _results1 = [];
       for (key in collection) {
+        if (!__hasProp.call(collection, key)) continue;
         value = collection[key];
-        _results1.push(fn(value, key));
+        fn(value, key);
       }
-      return _results1;
     }
+    return void 0;
   },
   extend: function() {
     var key, obj, other, others, _i, _len;
