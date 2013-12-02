@@ -33,7 +33,7 @@ module.exports = (grunt) ->
 			all: {}
 
 	# configure coffee, uglify, umd
-	config.coffee.compile.files[name + '.js'] = name + '.coffee'
+	config.coffee.compile.files[name + '.js'] = name + '.coffee.md'
 	config.uglify.standard.files[name + '.min.js'] = [name + '.js']
 	config.umd.all =
 		src: name + '.js'
