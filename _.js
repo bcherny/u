@@ -54,6 +54,28 @@ _ = {
     for (id in collection) {
       return id;
     }
+  },
+  classList: {
+    add: function(element, className) {
+      return element.className += " " + className;
+    },
+    remove: function(element, className) {
+      var regex;
+      regex = new RegExp("(^|\\s)" + className + "(?:\\s|$)");
+      return element.className = (element.className + '').replace(regex, '$1');
+    },
+    toggle: function(element, className) {
+      var verb;
+      if (_.classList.contains(element, className)) {
+        verb = 'remove';
+      } else {
+        verb = 'add';
+      }
+      return _.classList[verb](element, className);
+    },
+    contains: function(element, className) {
+      return (element.className.indexOf(className)) > -1;
+    }
   }
 };
 
