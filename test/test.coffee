@@ -1,5 +1,5 @@
 
-_ = require '../_'
+u = require '../u'
 
 exports['each (object)'] = (test) ->
 
@@ -11,7 +11,7 @@ exports['each (object)'] = (test) ->
 	accumulator = ''
 	expected = 'foobarbaz'
 
-	_.each items, (value) ->
+	u.each items, (value) ->
 		accumulator += value
 
 	test.equal accumulator, expected
@@ -24,7 +24,7 @@ exports['each (array)'] = (test) ->
 	accumulator = 0
 	expected = 54
 
-	_.each items, (value) ->
+	u.each items, (value) ->
 		accumulator += value
 
 	test.equal accumulator, expected
@@ -42,7 +42,7 @@ exports.extend = (test) ->
 	four =
 		baz: 4
 
-	_.extend one, two, three, four
+	u.extend one, two, three, four
 
 	test.equal one.foo, 1
 	test.equal one.bar, 2
@@ -53,7 +53,7 @@ exports.extend = (test) ->
 exports.fluent = (test) ->
 
 	obj =
-		fn: _.fluent ->
+		fn: u.fluent ->
 			'foo'
 
 	test.deepEqual (do obj.fn), obj
@@ -67,6 +67,6 @@ exports.one = (test) ->
 		two: 'bar'
 		tre: 'baz'
 
-	test.equal (_.one items), 'one'
+	test.equal (u.one items), 'one'
 
 	do test.done
