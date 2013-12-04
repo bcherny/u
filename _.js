@@ -58,13 +58,21 @@ _ = {
   classList: {
     add: function(element, className) {
       if (!_.classList.contains(element, className)) {
-        return element.className += " " + className;
+        if (element.className.baseVal != null) {
+          return element.setAttribute('class', "" + element.className.baseVal + " className");
+        } else {
+          return element.className += " " + className;
+        }
       }
     },
     remove: function(element, className) {
       var regex;
       regex = new RegExp("(^|\\s)" + className + "(?:\\s|$)");
-      return element.className = (element.className + '').replace(regex, '$1');
+      if (element.className.baseVal != null) {
+        return element.setAttribute('class', (element.className.baseVal + '').replace(regex, '$1'));
+      } else {
+        return element.className = (element.className + '').replace(regex, '$1');
+      }
     },
     toggle: function(element, className) {
       var verb;
@@ -76,7 +84,13 @@ _ = {
       return _.classList[verb](element, className);
     },
     contains: function(element, className) {
-      return (element.className.indexOf(className)) > -1;
+      var cName;
+      if (element.className.baseVal != null) {
+        cName = element.className.baseVal;
+      } else {
+        cName = element.className;
+      }
+      return (cName.indexOf(className)) > -1;
     }
   }
 };
