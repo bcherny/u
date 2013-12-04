@@ -57,7 +57,9 @@ _ = {
   },
   classList: {
     add: function(element, className) {
-      return element.className += " " + className;
+      if (!_.classList.contains(element, className)) {
+        return element.className += " " + className;
+      }
     },
     remove: function(element, className) {
       var regex;
