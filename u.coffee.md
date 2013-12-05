@@ -1,6 +1,6 @@
 Basic, underscore-like utilities.
 	
-	_ =
+	u =
 
 ## _.each
 functional, generic iterator
