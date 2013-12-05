@@ -2,7 +2,7 @@ Basic, underscore-like utilities.
 	
 	u =
 
-## _.each
+## u.each
 functional, generic iterator
 
 		each: (collection, fn) ->
@@ -16,7 +16,7 @@ functional, generic iterator
 
 			undefined
 
-## _.extend
+## u.extend
 augment an object with one or more other objects (mutates the first object passed)
 
 		extend: (obj, others...) ->
@@ -28,7 +28,7 @@ augment an object with one or more other objects (mutates the first object passe
 
 			obj
 
-## _.fluent
+## u.fluent
 make any function return `this` for easy functional style chainability
 
 		fluent: (fn) ->
@@ -37,14 +37,14 @@ make any function return `this` for easy functional style chainability
 				fn.apply @, arguments
 				@
 
-## _.one
+## u.one
 return the first key in an object (order not guaranteed, as objects are automatically sorted by key in some browsers)
 
 		one: (collection) ->
 
 			return id for id of collection
 
-## classList
+## u.classList
 manipulate `Element.classList` in an Internet Explorer-compatible way
 
 		classList:
@@ -52,7 +52,7 @@ manipulate `Element.classList` in an Internet Explorer-compatible way
 			add: (element, className) ->
 
 				# prevent duplicating classNames
-				if not _.classList.contains element, className
+				if not u.classList.contains element, className
 					if element.className.baseVal?
 						element.setAttribute 'class', "#{element.className.baseVal} className"
 					else
@@ -69,13 +69,13 @@ manipulate `Element.classList` in an Internet Explorer-compatible way
 
 			toggle: (element, className) ->
 
-				if _.classList.contains element, className
+				if u.classList.contains element, className
 					verb = 'remove'
 
 				else
 					verb = 'add'
 
-				_.classList[verb] element, className
+				u.classList[verb] element, className
 
 			contains: (element, className) ->
 

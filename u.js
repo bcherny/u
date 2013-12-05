@@ -57,7 +57,7 @@ u = {
   },
   classList: {
     add: function(element, className) {
-      if (!_.classList.contains(element, className)) {
+      if (!u.classList.contains(element, className)) {
         if (element.className.baseVal != null) {
           return element.setAttribute('class', "" + element.className.baseVal + " className");
         } else {
@@ -76,12 +76,12 @@ u = {
     },
     toggle: function(element, className) {
       var verb;
-      if (_.classList.contains(element, className)) {
+      if (u.classList.contains(element, className)) {
         verb = 'remove';
       } else {
         verb = 'add';
       }
-      return _.classList[verb](element, className);
+      return u.classList[verb](element, className);
     },
     contains: function(element, className) {
       var cName;
