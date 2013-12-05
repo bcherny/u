@@ -1,10 +1,10 @@
 {
   "name": "u",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "some general purpose utilities i end up using frequently, so why not put them in a separate repo?",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eighttrackmind/_.git"
+    "url": "https://github.com/eighttrackmind/u.git"
   },
   "author": "Boris Cherny <boris@performancejs.com>",
   "contributors": [
