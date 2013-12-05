@@ -1,6 +1,6 @@
 {
   "name": "u",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "some general purpose utilities i end up using frequently, so why not put them in a separate repo?",
   "repository": {
     "type": "git",
