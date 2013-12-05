@@ -1,8 +1,8 @@
 u
 =====================
 
-[![Build Status](https://travis-ci.org/eighttrackmind/_.png)](https://travis-ci.org/eighttrackmind/_.png)
-[![browser support](https://ci.testling.com/eighttrackmind/_.png)](https://ci.testling.com/eighttrackmind/_)
+[![Build Status](https://travis-ci.org/eighttrackmind/u.png)](https://travis-ci.org/eighttrackmind/u.png)
+[![browser support](https://ci.testling.com/eighttrackmind/u.png)](https://ci.testling.com/eighttrackmind/u)
 
 some general purpose utilities i end up using frequently, so why not put them in a separate repo?
 
@@ -12,4 +12,4 @@ think of it as a tiny subset of lodash and allong.es
 
 ## docs
 
-https://github.com/eighttrackmind/_/blob/master/_.coffee.md
+https://github.com/eighttrackmind/u/blob/master/u.coffee.md
